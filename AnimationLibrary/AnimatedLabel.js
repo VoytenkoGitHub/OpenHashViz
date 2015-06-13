@@ -4,7 +4,7 @@ function AnimatedLabel(id, val, center, initialWidth)
 {
 	this.centering = center;
 	this.label = val;
-	this.highlighted = false;
+	this.highlighted = true;
 	this.objectID = id;
 	this.alpha = 1.0;
 	this.addedToScene = true;
@@ -57,7 +57,7 @@ AnimatedLabel.prototype.draw = function(ctx)
 	}
 	ctx.strokeStyle = this.labelColor;
 	ctx.fillStyle = this.labelColor;
-	ctx.lineWidth = 1;
+	ctx.lineWidth = 0.5;
 	strList = this.label.split("\n");
 	if (strList.length == 1)
 	{
@@ -69,7 +69,7 @@ AnimatedLabel.prototype.draw = function(ctx)
 		var offset = (this.centering)?  (1.0 - strList.length) / 2.0 : 0;
 		for (var i = 0; i < strList.length; i++)
 		{
-			ctx.fillText(strList[i], this.x, this.y + offset + i * 12);
+			ctx.fillText(strList[i], this.x, this.y + offset + i * 18);
 			//this.textWidth = Math.max(this.textWidth, ctx.measureText(strList[i]).width);
 		}
 	}
@@ -86,7 +86,7 @@ AnimatedLabel.prototype.alignLeft = function(otherObject)
 	}
 	else
 	{
-		this.y = otherObject.centerY() - 5;
+		this.y = otherObject.centerY() - 0;
 		this.x = otherObject.left() - this.textWidth;
 	}
 }
@@ -96,11 +96,11 @@ AnimatedLabel.prototype.alignRight = function(otherObject)
 	if (this.centering)
 	{
 		this.y = otherObject.centerY();
-		this.x = otherObject.right() + this.textWidth / 2;
+		this.x = otherObject.right() + this.textWidth / 2 ;
 	}
 	else
 	{
-		this.y = otherObject.centerY() - 5;
+		this.y = otherObject.centerY() - 15;
 		this.x = otherObject.right();
 	}
 }
@@ -110,12 +110,12 @@ AnimatedLabel.prototype.alignTop = function(otherObject)
 {
 	if (this.centering)
 	{
-		this.y = otherObject.top() - 5;
+		this.y = otherObject.top() - 15;
 		this.x = otherObject.centerX();
 	}
 	else
 	{
-		this.y = otherObject.top() - 10;
+		this.y = otherObject.top() - 30;
 		this.x = otherObject.centerX() -this.textWidth / 2;
 	}
 }
@@ -125,7 +125,7 @@ AnimatedLabel.prototype.alignBottom = function(otherObject)
 {
 	if (this.centering)
 	{
-		this.y = otherObject.bottom() + 5;
+		this.y = otherObject.bottom() + 15;
 		this.x = otherObject.centerX();
 	}
 	else
