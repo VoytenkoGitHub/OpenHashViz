@@ -6,16 +6,13 @@ function ClosedHash(am, w, h)
 
 var ARRAY_ELEM_WIDTH = 120;
 var ARRAY_ELEM_HEIGHT = 40;
-var ARRAY_ELEM_START_X = 50;
+var ARRAY_ELEM_START_X = 70;
 var ARRAY_ELEM_START_Y = 100;
 var ARRAY_VERTICAL_SEPARATION = 100;
 
 var CLOSED_HASH_TABLE_SIZE  = 29;
 
 var ARRAY_Y_POS = 350;
-
-
-var INDEX_COLOR = "#0000FF";
 
 
 
