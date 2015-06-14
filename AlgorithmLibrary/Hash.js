@@ -14,18 +14,18 @@ Hash.superclass = Algorithm.prototype;
 var MAX_HASH_LENGTH = 10;
 
 
-var HASH_NUMBER_START_X = 200;
-var HASH_X_DIFF = 7;
+var HASH_NUMBER_START_X = 300;
+var HASH_X_DIFF = 15;
 var HASH_NUMBER_START_Y = 10;
 var HASH_ADD_START_Y = 30;
-var HASH_INPUT_START_X = 60;
-var HASH_INPUT_X_DIFF = 7;
+var HASH_INPUT_START_X = 150;
+var HASH_INPUT_X_DIFF = 15;
 var HASH_INPUT_START_Y = 45;
-var HASH_ADD_LINE_Y = 42;
+var HASH_ADD_LINE_Y = 43;
 var HASH_RESULT_Y = 50;
 var ELF_HASH_SHIFT = 10;
 
-var HASH_LABEL_X = 300;
+var HASH_LABEL_X = 400;
 var HASH_LABEL_Y = 30;
 var HASH_LABEL_DELTA_X = 50;
 
@@ -139,7 +139,7 @@ Hash.prototype.doHash = function(input)
 	{
 		var oldnextIndex = this.nextIndex;
 		var label1= this.nextIndex++;
-		this.cmd("CreateLabel", label1, "Hashing:" , 10, 45, 0);
+		this.cmd("CreateLabel", label1, "Хешування:" , 10, 45, 0);
 		var wordToHashID = new Array(input.length);
 		var wordToHash = new Array(input.length);
 		for (var i = 0; i < input.length; i++)
